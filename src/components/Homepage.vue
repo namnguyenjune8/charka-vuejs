@@ -61,7 +61,7 @@
 
           </p>
         </div>
-        <section class="elementor-section elementor-top-section elementor-element elementor-element-f97c2f7 scheme_light elementor-section-full_width elementor-section-height-default elementor-section-height-default sc_fly_static trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="f97c2f7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <!-- <section class="elementor-section elementor-top-section elementor-element elementor-element-f97c2f7 scheme_light elementor-section-full_width elementor-section-height-default elementor-section-height-default sc_fly_static trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="f97c2f7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                 <div class="elementor-container elementor-column-gap-no">
                 <div class="elementor-row">
                 <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-faaedd8 sc_inner_width_none sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="faaedd8" data-element_type="column">
@@ -112,7 +112,7 @@
                 </div>
                 </div>
                 </div>
-</section>
+</section> -->
       </section>
      
     
