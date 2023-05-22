@@ -6,9 +6,12 @@
       <SectionWelcome />
       <SectionOurpurpose />
       <SectionImage />
-     
-    
-  
+      <SectionMeditation />
+      <SectionWhatwedo />
+      <SectionVideo />
+      <SectionAvatar />
+      <SectionNews />
+      <SectionQuesion />
     </main>
     <Footer />
     <router-view/>
@@ -22,6 +25,14 @@
   import SectionWelcome from './SectionWelcome.vue';
   import SectionOurpurpose from './SectionOurpurpose.vue';
   import SectionImage from './SectionImage.vue';
+  import SectionMeditation from './SectionMeditation.vue';
+  import SectionWhatwedo from './SectionWhatwedo.vue';
+  import SectionVideo from './SectionVideo.vue';
+  import SectionAvatar from './SectionAvatar.vue';
+  import SectionNews from './SectionNews.vue';
+  import SectionQuesion from './SectionQuestion.vue';
+
+
   import Footer from './Footer.vue';
   
   

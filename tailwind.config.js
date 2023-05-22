@@ -6,6 +6,7 @@
             colors: {
               customGreen: 'rgba(99,198,67,0.7)',
               hoverGreen: 'rgba(99,198,67,0.3)',
+              backgroundColorNews: '#FAF8F8',
             },
         },
       },
