@@ -1,5 +1,5 @@
 <template>
-    <header class="">
+  <header class="">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="#" class="-m-1.5 p-1.5">
@@ -14,14 +14,15 @@
         </button>
       </div>
       <PopoverGroup class="hidden lg:flex lg:gap-x-12 mr-8">
-        <Popover class="relative">
-          <PopoverButton class="relative flex items-center font-inter font-bold text-base text-center leading-6 text-black">
-            Home
-            <span class="block absolute bottom-[-5px]  left-3 w-7 h-[3px] bg-black rounded-full transform -translate-x-1/2"></span>
-          </PopoverButton>
-
-         
-        </Popover>
+        <Popover class="relative" @mouseenter="showPopover = true" @mouseleave="showPopover = false">
+  <PopoverButton class="relative flex items-center font-inter font-bold text-base text-center leading-6 text-black">
+    Home
+    <span class="block absolute bottom-[-5px]  left-3 w-7 h-[3px] bg-black rounded-full transform -translate-x-1/2"></span>
+  </PopoverButton>
+  <PopoverPanel v-if="showPopover" class="absolute z-10 mt-2 -ml-4 w-48 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+    <PopoverButton v-for="item in [...products, ...callsToAction]" :key="item.name" as="a" :href="item.href" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</PopoverButton>
+  </PopoverPanel>
+</Popover>
 
         <a href="#" class="w-112 relative font-inter font-normal text-base leading-6 text-center text-gray-700 flex-none order-1 flex-grow-0 hover:text-gray-400 menu-item">Activities</a>
         <a href="#" class="w-112 relative font-inter font-normal text-base leading-6 text-center text-gray-700 flex-none order-1 flex-grow-0 hover:text-gray-400 menu-item">Retreats</a>
@@ -71,45 +72,29 @@
     </Dialog>
   </header>
 </template>
+
 <script setup>
 import { ref } from 'vue'
 import IconSocial from './IconSocial.vue';
-import {
-    Dialog,
-    DialogPanel,
-    Disclosure,
-    DisclosureButton,
-    DisclosurePanel,
-    Popover,
-    PopoverButton,
-    PopoverGroup,
-    // PopoverPanel,
-  } from '@headlessui/vue'
-  import {
-    ArrowPathIcon,
-    Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
-    XMarkIcon,
-  } from '@heroicons/vue/24/outline'
-  import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
-  
-  const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-  ]
-  const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
-  ]
-  
-  const mobileMenuOpen = ref(false)
+import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel, Popover, PopoverButton, PopoverGroup } from '@headlessui/vue'
+import { ArrowPathIcon, Bars3Icon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, SquaresPlusIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
+
+const products = [
+  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
+  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
+  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
+  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
+  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+]
+const callsToAction = [
+  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+]
+const showPopover = ref(false)
+const mobileMenuOpen = ref(false)
 </script>
+
 <style lang="scss">
     
 </style>
